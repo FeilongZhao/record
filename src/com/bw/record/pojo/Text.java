@@ -7,6 +7,8 @@ import java.io.Serializable;
  *  对应tbl_test数据库，保存用户的输入数据
  */
 import java.sql.Date;
+
+
 public class Text implements Serializable{
 
     /**
@@ -112,6 +114,13 @@ public class Text implements Serializable{
 
     public void setContest(String contest) {
         this.contest = contest;
+    }
+
+    @Override
+    public String toString() {
+        return "Text [cardNumber=" + cardNumber + ", projectName=" + projectName + ", contest=" + contest + ", company="
+                + company + ", persion=" + persion + ", hours=" + hours + ", date=" + date + ", test1=" + test1
+                + ", test2=" + test2 + ", test3=" + test3 + "]";
     }
     
 }

@@ -73,7 +73,7 @@
             <!-- /.dropdown -->
             <li class="dropdown"><a class="dropdown-toggle"
                 data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
-                    <i class="fa fa-caret-down" >欢迎您：****</i>
+                    <i class="fa fa-caret-down" >欢迎您：${admin.name }</i>
             </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> 用户设置</a></li>
@@ -122,7 +122,7 @@
                     <form class="form-inline" action="${pageContext.request.contextPath }/#n" method="post">
                         <div class="form-group">
                             <label for="projectName">项目名称</label> 
-                            <input type="text" class="form-control" id="admin" value="${admin }" name="admin">
+                            <input type="text" class="form-control" id="admin" value="${projectName }" name="projectName">
                         </div>
                         <div class="form-group">
                             <label for="companyName">公司</label> 
@@ -200,7 +200,7 @@
 
     </div>
     <!-- 事件编辑对话框 -->
-    <div class="modal fade" id="customerEditDialog" tabindex="-1" role="dialog"
+    <div class="modal fade" id="testEditDialog" tabindex="-1" role="dialog"
         aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -214,18 +214,18 @@
                     <form class="form-horizontal" id="edit_customer_form">
                         <input type="hidden" id="edit_cust_id" name="cust_id"/>
                         <div class="form-group">
-                            <label for="edit_customerName" class="col-sm-2 control-label">项目名称</label>
+                            <label for="edit_projectName" class="col-sm-2 control-label">项目名称</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_customerName" placeholder="客户名称" name="cust_name">
+                                <input type="text" class="form-control" id="edit_projectrName" placeholder="項目名称" name="projectName">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="edit_customerFrom" style="float:left;padding:7px 15px 0 27px;">所属公司</label> 
                             <div class="col-sm-10">
-                                <select class="form-control" id="edit_customerFrom" placeholder="客户来源" name="cust_source">
+                                <select class="form-control" id="edit_company" placeholder="所属公司" name="companys">
                                     <option value="">--请选择--</option>
-                                    <c:forEach items="${fromType}" var="item">
-                                        <option value="${item.dict_id}"<c:if test="${item.dict_id == custSource}"> selected</c:if>>${item.dict_item_name }</option>
+                                    <c:forEach items="${companys}" var="item">
+                                    <option value="${item.id}"<c:if test="${item.id == companySource}"> selected</c:if>>${item.companyName }</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -244,18 +244,18 @@
                         <div class="form-group">
                             <label for="edit_custLevel" style="float:left;padding:7px 15px 0 27px;">参加人员</label>
                             <div class="col-sm-10">
-                                <select class="form-control" id="edit_custLevel" name="cust_level">
+                                <select class="form-control" id="edit_persion" name="persionId">
                                     <option value="">--请选择--</option>
-                                    <c:forEach items="${levelType}" var="item">
-                                        <option value="${item.dict_id}"<c:if test="${item.dict_id == custLevel}"> selected</c:if>>${item.dict_item_name }</option>
+                                    <c:forEach items="${contest}" var="item">
+                                        <option value="${item.id}"<c:if test="${item.id == persionId}"> selected</c:if>>${item.persionName }</option>
                                     </c:forEach>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="edit_linkMan" class="col-sm-2 control-label">时间</label>
+                            <label for="edit_date" class="col-sm-2 control-label">时间</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_linkMan" placeholder="联系人" name="cust_linkman">
+                                <input type="text" class="form-control" id="date" placeholder="时间" name="date">
                             </div>
                         </div>
                         

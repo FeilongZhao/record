@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bw.record.mapper.TextDao">
+
+    <insert id="addContest" parameterType="Text">
+    insert into tbl_text(cardnumber,projectname,contest,company,persion,hours,date,test1,test2,test3)values(#{cardNumber},#{projectName},#{contest},
+    #{company},#{persion},#{hours},#{date},#{test1},#{test2},#{test3})
+    </insert>
+
+
+</mapper>

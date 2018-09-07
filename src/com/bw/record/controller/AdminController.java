@@ -2,6 +2,7 @@ package com.bw.record.controller;
 
 import java.util.Collection;
 
+import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +20,16 @@ public class AdminController {
     private AdminService adminService;
     
     @RequestMapping(value = "/admin/login")
-    public String login(Admin admin,Model model) {
+    public String login(Admin admin,Model model,HttpSession session) {
         
         Admin a = adminService.selectAdminByCardNumber(admin.getCardNumber());
         if (a != null) {
             if (admin.getPassword().equals(a.getPassword())) {
                 
-                System.out.println("yes");
-                return "list";
+                //System.out.println("yes");
+                session.setAttribute("admin",admin);
+               // model.addAttribute("admin",admin);
+                return "add";
             }else {
                 return "帐号或者密码错误";
             }

@@ -25,7 +25,7 @@
             <form id="Login" name="Login" method="post" onsubmit="" action="${pageContext.request.contextPath }/admin/login">
                 <li class="login-item">
                     <span>用户名：</span>
-                    <input type="text" id="username" name="cardNumber" class="login_input" >
+                    <input type="text" id="cardNumber" name="cardNumber" class="login_input" >
                     <span id="count-msg" class="error"></span>
                 </li>
                 <li class="login-item">
