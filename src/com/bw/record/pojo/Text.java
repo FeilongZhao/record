@@ -18,6 +18,8 @@ public class Text implements Serializable{
     
     private String projectName;
     
+    private String contest;
+    
     private String company;
     
     private String persion;
@@ -102,6 +104,14 @@ public class Text implements Serializable{
 
     public void setTest3(String test3) {
         this.test3 = test3;
+    }
+
+    public String getContest() {
+        return contest;
+    }
+
+    public void setContest(String contest) {
+        this.contest = contest;
     }
     
 }
