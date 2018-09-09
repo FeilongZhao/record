@@ -24,4 +24,7 @@
         <!-- 后缀 -->
         <property name="suffix" value=".jsp" />
     </bean>
+    
+    <!-- 登录异常处理器 -->
+    <bean id="loginHandlerException" class="com.bw.record.exception.LoginHandlerException"></bean>
 </beans>

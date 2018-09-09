@@ -55,12 +55,12 @@
 
 			<!-- /.dropdown -->
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#"> 欢迎您：${admin.name }</a>
+				data-toggle="dropdown" href="#"> 欢迎您：${admin.cardNumber }</a>
 				<ul class="dropdown-menu dropdown-user">
 					<li><a href="#">用户设置</a></li>
 					<li><a href="#"> 系统设置</a></li>
 					<li class="divider"></li>
-					<li><a href="login.html">退出登录</a></li>
+					<li><a href="#">退出登录</a></li>
 				</ul> <!-- /.dropdown-user --></li>
 			<!-- /.dropdown -->
 		</ul>
