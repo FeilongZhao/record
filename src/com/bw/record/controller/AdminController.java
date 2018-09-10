@@ -7,11 +7,13 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bw.record.exception.PasswordWrongException;
+import com.bw.record.exception.UpdatePasswordException;
 import com.bw.record.pojo.Admin;
 import com.bw.record.service.AdminService;
 /**
@@ -33,7 +35,9 @@ public class AdminController {
             if (admin.getPassword().equals(a.getPassword())) {
 
                 // System.out.println("yes");
-                session.setAttribute("admin", admin);
+                session.setAttribute("admin", a);
+                System.out.println(a.getName());
+                System.out.println(a.getCardNumber());
                 // model.addAttribute("admin",admin);
                 return "list";
             } else {
@@ -42,6 +46,25 @@ public class AdminController {
         } else {
             throw new PasswordWrongException("帐号不存在");
         }
+    }
+    
+    
+    @RequestMapping(value = "/admin/updatePassword")
+    public String update(HttpSession session,String password,String newPassword) throws UpdatePasswordException {
+        
+        Admin admin = (Admin) session.getAttribute("admin");
+        
+        if (admin.getPassword().equals(password) || admin.getPassword() == password) {
+            
+            admin.setPassword(newPassword);
+            adminService.updatePassword(admin);
+            return "myinfo";
+        }else {
+            throw new UpdatePasswordException("原密码错误，请重新输入");
+        }
+        
+        
+       
     }
 
 }

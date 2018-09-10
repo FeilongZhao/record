@@ -57,7 +57,8 @@
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="#"> 欢迎您：${admin.name }</a>
 				<ul class="dropdown-menu dropdown-user">
-					<li><a href="${pageContext.request.contextPath }/transit/myinfo">密码修改</a></li>
+					<li><a
+						href="${pageContext.request.contextPath }/transit/myinfo">密码修改</a></li>
 					<li><a href="#"> 系统设置</a></li>
 					<li class="divider"></li>
 					<li><a href="${pageContext.request.contextPath }/admin/out">退出登录</a></li>
@@ -79,10 +80,9 @@
 							</span>
 						</div> <!-- /input-group -->
 					</li>
-					<li><a href="${pageContext.request.contextPath }/transit/list" class="active"><i
-							class="fa fa-edit fa-fw"></i> 事件列表</a></li>
-					<li><a href="#"><i
-							class="fa fa-dashboard fa-fw"></i> 事件记录</a></li>
+					<li><a href="${pageContext.request.contextPath }/transit/list"
+						class="active"><i class="fa fa-edit fa-fw"></i> 事件列表</a></li>
+					<li><a href="#"><i class="fa fa-dashboard fa-fw"></i> 事件记录</a></li>
 				</ul>
 			</div>
 			<!-- /.sidebar-collapse -->
@@ -92,7 +92,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">事件填写</h1>
+					<h1 class="page-header">密码修改</h1>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -101,42 +101,37 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">事件表单</div>
+						
 						<!-- /.panel-heading -->
-						<form action="${pageContext.request.contextPath }/text/add"
-							method="post"  >
-							<table class="table table-bordered table-striped">
-								
-									<tr>
-										<th>项目名称</th>
-										<th>项目内容</th>
-										<th>所属公司</th>
-										<th>参加人员</th>
-										<th>时间</th>
-									</tr>
-								
-									<tr>
-										<td><input style="height: 100%; width: 100%"
-											name="projectName" /></td>
-										<td><input style="height: 100%; width: 100%"
-											name="contest" /></td>
-										<td><input style="height: 100%; width: 100%"
-											name="company" /></td>
-										<td><input style="height: 100%; width: 100%"
-											name="persion" /></td>
-										<td><input style="height: 100%; width: 100%" name="hours"
-											 placeholder="例如 20180101" /></td>
-									</tr>
-								
-							</table>
-							<button type="submit" class="btn btn-primary"
-								style="float: right;">添加</button>
-						</form>
+						  <form action="${pageContext.request.contextPath }/admin/updatePassword" method="post" >
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">原密码</span> <input
+                type="password" class="form-control" placeholder="原密码"
+                aria-describedby="sizing-addon1" name="password">
+               
+        </div>
+        
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">新密码</span> <input
+                type="password" class="form-control" placeholder="新密码"
+                aria-describedby="sizing-addon1">
+        </div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">新密码</span> <input
+                type="password" class="form-control" placeholder="确认密码"
+                aria-describedby="sizing-addon1" name="newPassword">
+        </div>
+         <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1"> ${updateMsg }</span> 
+        </div>
+    <button type="submit" class="btn btn-primary"
+                                style="float: right;">添加</button>
+    </form>
+  
 					</div>
 				</div>
 
 			</div>
-
 
 		</div>
 		<!-- jQuery -->

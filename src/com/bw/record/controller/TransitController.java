@@ -24,5 +24,13 @@ public class TransitController {
        
        return "list";
    }
+   
+   
+   @RequestMapping(value = "/transit/myinfo")
+   public String toMyInfo() {
+       
+       System.out.println("toMyInfo");
+       return "myinfo";
+   }
     
 }

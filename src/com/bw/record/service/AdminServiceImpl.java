@@ -17,4 +17,9 @@ public class AdminServiceImpl implements AdminService{
         return adminDao.selectAdminByCardNumber(cardNumber);
     }
 
+    public void updatePassword(Admin admin) {
+        adminDao.updatePassword(admin);
+        
+    }
+
 }

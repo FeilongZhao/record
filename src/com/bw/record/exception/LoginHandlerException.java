@@ -14,7 +14,7 @@ public class LoginHandlerException implements HandlerExceptionResolver {
 
         String msg;
         ModelAndView modelAndView = new ModelAndView();
-        System.out.println( "adadasdfadfa" +exception.getClass());
+   //     System.out.println( "adadasdfadfa" +exception.getClass());
         
         if (exception instanceof PasswordWrongException) {
             PasswordWrongException passwordWrongException = (PasswordWrongException) exception;
@@ -23,7 +23,16 @@ public class LoginHandlerException implements HandlerExceptionResolver {
           //  System.out.println(msg);
             modelAndView.setViewName("index");
             return modelAndView;
-        } else {
+        } else if (exception instanceof UpdatePasswordException) {
+            
+            
+            UpdatePasswordException updatePasswordException = (UpdatePasswordException) exception;
+            
+            modelAndView.addObject("updateMsg",updatePasswordException.getText());
+            modelAndView.setViewName("myinfo");
+          //  System.out.println(updatePasswordException.getMessage());
+            return modelAndView;
+        }else {
             modelAndView.addObject("errorMsg", "未知异常");
             modelAndView.setViewName("error");
           //  System.out.println( "adadasdfadfa" +exception.getClass().getName());

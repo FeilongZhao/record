@@ -72,11 +72,10 @@
 
             <!-- /.dropdown -->
             <li class="dropdown"><a class="dropdown-toggle"
-                data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
-                    <i class="fa fa-caret-down" >欢迎您：${admin.cardNumber }</i>
+                data-toggle="dropdown" href="#"> 欢迎您：${admin.name }</i>
             </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> 用户设置</a></li>
+                    <li><a href="${pageContext.request.contextPath }/transit/myinfo"><i class="fa fa-user fa-fw"></i> 密码修改</a></li>
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
                     <li class="divider"></li>
                     <li><a href="${pageContext.request.contextPath }/admin/out"><i class="fa fa-sign-out fa-fw"></i>

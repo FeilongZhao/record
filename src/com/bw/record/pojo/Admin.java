@@ -19,6 +19,8 @@ public class Admin implements Serializable{
 
     private int cardNumber;
     
+    private String name;
+    
     private String password;
 
     public int getCardNumber() {
@@ -28,6 +30,14 @@ public class Admin implements Serializable{
     public void setCardNumber(int cardNumber) {
         this.cardNumber = cardNumber;
     }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
 
     public String getPassword() {
         return password;
@@ -36,6 +46,7 @@ public class Admin implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
+  
     
 }
