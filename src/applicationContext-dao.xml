@@ -31,5 +31,10 @@
         <!-- 设置Mapper扫描包 -->
         <property name="basePackage" value="com.bw.record.mapper" />
     </bean>
+    <!-- 开启事务 -->
+    <bean
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
     
 </beans>

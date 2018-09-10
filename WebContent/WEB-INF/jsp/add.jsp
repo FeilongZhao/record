@@ -60,7 +60,7 @@
 					<li><a href="#">用户设置</a></li>
 					<li><a href="#"> 系统设置</a></li>
 					<li class="divider"></li>
-					<li><a href="#">退出登录</a></li>
+					<li><a href="${pageContext.request.contextPath }/admin/out">退出登录</a></li>
 				</ul> <!-- /.dropdown-user --></li>
 			<!-- /.dropdown -->
 		</ul>
@@ -79,9 +79,9 @@
 							</span>
 						</div> <!-- /input-group -->
 					</li>
-					<li><a href="customer.action" class="active"><i
+					<li><a href="${pageContext.request.contextPath }/transit/list" class="active"><i
 							class="fa fa-edit fa-fw"></i> 事件列表</a></li>
-					<li><a href="salevisit.action"><i
+					<li><a href="#"><i
 							class="fa fa-dashboard fa-fw"></i> 事件记录</a></li>
 				</ul>
 			</div>
@@ -104,7 +104,7 @@
 						<div class="panel-heading">事件表单</div>
 						<!-- /.panel-heading -->
 						<form action="${pageContext.request.contextPath }/text/add"
-							method="post" >
+							method="post"  >
 							<table class="table table-bordered table-striped">
 								
 									<tr>

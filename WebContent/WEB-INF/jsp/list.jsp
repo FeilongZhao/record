@@ -73,13 +73,13 @@
             <!-- /.dropdown -->
             <li class="dropdown"><a class="dropdown-toggle"
                 data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
-                    <i class="fa fa-caret-down" >欢迎您：${admin.name }</i>
+                    <i class="fa fa-caret-down" >欢迎您：${admin.cardNumber }</i>
             </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> 用户设置</a></li>
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
                     <li class="divider"></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>
+                    <li><a href="${pageContext.request.contextPath }/admin/out"><i class="fa fa-sign-out fa-fw"></i>
                             退出登录</a></li>
                 </ul> <!-- /.dropdown-user --></li>
             <!-- /.dropdown -->
@@ -99,9 +99,9 @@
                             </span>
                         </div> <!-- /input-group -->
                     </li>
-                    <li><a href="customer.action" class="active"><i
+                    <li><a href="#" class="active"><i
                             class="fa fa-edit fa-fw"></i> 事件列表</a></li>
-                    <li><a href="salevisit.action"><i
+                    <li><a href="${pageContext.request.contextPath }/transit/add"><i
                             class="fa fa-dashboard fa-fw"></i> 事件记录</a></li>
                 </ul>
             </div>

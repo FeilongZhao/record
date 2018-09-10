@@ -26,8 +26,8 @@ public class LoginHandlerException implements HandlerExceptionResolver {
         } else {
             modelAndView.addObject("errorMsg", "未知异常");
             modelAndView.setViewName("error");
-            System.out.println( "adadasdfadfa" +exception.getClass().getName());
-            System.out.println(new PasswordWrongException(null).getClass());
+          //  System.out.println( "adadasdfadfa" +exception.getClass().getName());
+          //  System.out.println(new PasswordWrongException(null).getClass());
         }      
        return modelAndView;
     }

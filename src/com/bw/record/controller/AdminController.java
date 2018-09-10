@@ -14,7 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.bw.record.exception.PasswordWrongException;
 import com.bw.record.pojo.Admin;
 import com.bw.record.service.AdminService;
-
+/**
+ * 登录controller
+ * @author Alvin
+ *
+ */
 @Controller
 public class AdminController {
 
@@ -31,7 +35,7 @@ public class AdminController {
                 // System.out.println("yes");
                 session.setAttribute("admin", admin);
                 // model.addAttribute("admin",admin);
-                return "add";
+                return "list";
             } else {
                 throw new PasswordWrongException("密码错误");
             }

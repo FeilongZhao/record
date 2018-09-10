@@ -17,7 +17,11 @@ import com.bw.record.service.AdminService;
 import com.bw.record.service.TextService;
 
 import junit.framework.Test;
-
+/**
+ * 添加信息controller
+ * @author Alvin
+ *
+ */
 @Controller
 public class TextController {
     

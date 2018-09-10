@@ -1,12 +1,13 @@
 package com.bw.record.pojo;
 
 import java.io.Serializable;
+import java.util.Date;
 /**
  * 
  * @author Alvin
  *  对应tbl_test数据库，保存用户的输入数据
  */
-import java.sql.Date;
+
 
 
 public class Text implements Serializable{
