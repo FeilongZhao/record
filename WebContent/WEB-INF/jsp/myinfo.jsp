@@ -80,9 +80,10 @@
 							</span>
 						</div> <!-- /input-group -->
 					</li>
-					<li><a href="${pageContext.request.contextPath }/transit/list"
+					<li><a href="${pageContext.request.contextPath }/select/list"
 						class="active"><i class="fa fa-edit fa-fw"></i> 事件列表</a></li>
-					<li><a href="#"><i class="fa fa-dashboard fa-fw"></i> 事件记录</a></li>
+					<li><a href="${pageContext.request.contextPath }/transit/add"><i
+							class="fa fa-dashboard fa-fw"></i> 事件记录</a></li>
 				</ul>
 			</div>
 			<!-- /.sidebar-collapse -->
@@ -101,38 +102,38 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						
+
 						<!-- /.panel-heading -->
-						  <form action="${pageContext.request.contextPath }/admin/updatePassword" method="post" >
-        <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">原密码</span> <input
-                type="password" class="form-control" placeholder="原密码"
-                aria-describedby="sizing-addon1" name="password">
-               
-        </div>
-        
-        <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">新密码</span> <input
-                type="password" class="form-control" placeholder="新密码"
-                aria-describedby="sizing-addon1">
-        </div>
-        <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1">新密码</span> <input
-                type="password" class="form-control" placeholder="确认密码"
-                aria-describedby="sizing-addon1" name="newPassword">
-        </div>
-         <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1"> ${updateMsg }</span> 
-        </div>
-    <button type="submit" class="btn btn-primary"
-                                style="float: right;">添加</button>
-    </form>
-  
+						<form
+							action="${pageContext.request.contextPath }/admin/updatePassword"
+							method="post">
+							<div class="input-group input-group-lg">
+								<span class="input-group-addon" id="sizing-addon1">原密码</span> <input
+									type="password" class="form-control" placeholder="原密码"
+									aria-describedby="sizing-addon1" name="password">
+
+							</div>
+
+							<div class="input-group input-group-lg">
+								<span class="input-group-addon" id="sizing-addon1">新密码</span> <input
+									type="password" class="form-control" placeholder="新密码"
+									aria-describedby="sizing-addon1" name = "password" id = "password">
+							</div>
+							<div class="input-group input-group-lg">
+								<span class="input-group-addon" id="sizing-addon1">新密码</span>
+								 <input	type="password" class="form-control" placeholder="确认密码"
+									aria-describedby="sizing-addon1" name="newPassword" id="newPassword" onblur="check()">
+							</div>
+							<div class="input-group input-group-lg">
+								<span class="input-group-addon" id="sizing-addon1">
+									${updateMsg }</span>
+							</div>
+							<button type="submit" class="btn btn-primary"
+								style="float: right;">添加</button>
+						</form>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
 		<!-- jQuery -->
 		<script src="<%=basePath%>js/jquery.min.js"></script>
@@ -149,6 +150,23 @@
 
 		<!-- Custom Theme JavaScript -->
 		<script src="<%=basePath%>js/sb-admin-2.js"></script>
+		<script type="text/javascript">
+		
+		function check(){
+			
+			var oldPassword = document.getElementById("password").value;
+			var newPassword = document.getElementById("newPassword").value;
+			
+			if(oldPassword == newPassword){
+				
+			}else{
+				alert("密码不一致");
+			}
+			
+		}
+		
+		
+		</script>
 </body>
 
 </html>

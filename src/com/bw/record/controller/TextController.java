@@ -9,7 +9,9 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bw.record.pojo.Admin;
 import com.bw.record.pojo.Text;
@@ -37,6 +39,36 @@ public class TextController {
         textService.addTest(text);
         
         return "ok";
+    }
+    
+    //删除text
+    @RequestMapping(value="/text/delete")
+    public @ResponseBody
+    String deleteById(Integer id) {
+        
+        
+        textService.deleteById(id);
+        return "OK";
+    }
+    
+    
+    //更新text
+    @RequestMapping(value="/text/update")
+    public @ResponseBody
+    String updateText(Text text) {
+        System.out.println("texttexttet" + text.toString());
+        textService.updateById(text);
+        
+        
+        return "OK";
+    }
+    
+    @RequestMapping(value="/text/edit")
+    public @ResponseBody
+    Text edit(Integer id) {
+        
+       System.out.println( "idididididid"+id);
+        return textService.selectTextById(id);
     }
 
 }

@@ -12,6 +12,7 @@ import org.apache.taglibs.standard.tag.common.core.UrlSupport;
 
 /**
  * 显示格式 上一页 1 2 3 4 5 下一页
+ * com.bw.record.utils.NavigationTag
  */
 public class NavigationTag extends TagSupport {
     static final long serialVersionUID = 2372405317744358833L;

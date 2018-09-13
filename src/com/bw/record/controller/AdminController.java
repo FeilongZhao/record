@@ -39,7 +39,7 @@ public class AdminController {
                 System.out.println(a.getName());
                 System.out.println(a.getCardNumber());
                 // model.addAttribute("admin",admin);
-                return "list";
+                return "redirect:/select/list";
             } else {
                 throw new PasswordWrongException("密码错误");
             }

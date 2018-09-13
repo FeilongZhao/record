@@ -4,10 +4,93 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bw.record.mapper.TextDao">
 
-    <insert id="addContest" parameterType="Text">
-    insert into tbl_text(cardnumber,projectname,contest,company,persion,hours,date,test1,test2,test3)values(#{cardNumber},#{projectName},#{contest},
-    #{company},#{persion},#{hours},#{date},#{test1},#{test2},#{test3})
-    </insert>
+	<insert id="addContest" parameterType="Text">
+		insert into
+		tbl_text(cardnumber,projectname,contest,company,persion,hours,date,test1,test2,test3)values(#{cardNumber},#{projectName},#{contest},
+		#{company},#{persion},#{hours},#{date},#{test1},#{test2},#{test3})
+	</insert>
 
 
+	<select id="selectByCode" parameterType="String" resultType="Company">
+
+		select * from tbl_company where uid = #{value}
+
+	</select>
+
+	<select id="textCount" parameterType="QueryVo" resultType="Integer">
+		select count(1) from tbl_text
+		<where>
+
+			cardnumber=#{cardNumber}
+
+			<if test="projectName != null and projectName != ''">
+				and projectname like "%"#{projectName}"%"
+			</if>
+			<if test="persion != null and persion != ''">
+				and persion like "%"#{persion}"%"
+			</if>
+			<if test="company != null and company != ''">
+				and company = #{company}
+			</if>
+		</where>
+	</select>
+
+	<select id="selectTextList" parameterType="QueryVo" resultType="Text">
+		select * from tbl_text
+		<where>
+
+			cardnumber = #{cardNumber}
+
+			<if test="projectName != null and projectName !=''">
+				and projectname like "%"#{projectName}"%"
+			</if>
+			<if test="persion != null and persion != ''">
+				and persion like "%"#{persion}"%"
+			</if>
+			<if test="company != null and company != ''">
+				and company = #{company}
+			</if>
+		</where>
+
+		limit #{startRow},#{size}
+	</select>
+	<!--//根基id删除 -->
+	<delete id="deleteById" parameterType="Integer">
+		delete from
+		tbl_text where
+		id = #{value}
+
+	</delete>
+	<!-- 根据id更新 -->
+	<update id="updateById" parameterType="Text">
+		update tbl_text
+		<set>
+			<if test="projectName != null">
+				projectname = #{projectName},
+			</if>
+			<if test="company != null">
+				 company = #{company},
+			</if>
+			<if test="contest != null ">
+				 contest = #{contest},
+			</if>
+			<if test="persion != null">
+			    persion = #{persion},
+			</if>
+			<if test="hours != null">
+			   hours = #{hours}
+			</if>
+		</set>
+		<where>
+			id = #{id}
+		</where>
+	</update>
+	<!-- 根据id查询 -->
+
+	<select id="selectTextById" parameterType="Integer" resultType="Text">
+		select * from tbl_text
+		<where>
+			id = #{id}
+		</where>
+	</select>
 </mapper>

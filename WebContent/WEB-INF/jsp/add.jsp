@@ -79,7 +79,7 @@
 							</span>
 						</div> <!-- /input-group -->
 					</li>
-					<li><a href="${pageContext.request.contextPath }/transit/list" class="active"><i
+					<li><a href="${pageContext.request.contextPath }/select/list" class="active"><i
 							class="fa fa-edit fa-fw"></i> 事件列表</a></li>
 					<li><a href="#"><i
 							class="fa fa-dashboard fa-fw"></i> 事件记录</a></li>
