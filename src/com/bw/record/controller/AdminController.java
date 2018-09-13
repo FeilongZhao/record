@@ -16,10 +16,11 @@ import com.bw.record.exception.PasswordWrongException;
 import com.bw.record.exception.UpdatePasswordException;
 import com.bw.record.pojo.Admin;
 import com.bw.record.service.AdminService;
+import com.ndktools.javamd5.core.MD5;
 /**
  * 登录controller
  * @author Alvin
- *
+ *MD5加密是32位大写
  */
 @Controller
 public class AdminController {
@@ -30,14 +31,16 @@ public class AdminController {
     @RequestMapping(value = "/admin/login")
     public String login(Admin admin, Model model, HttpSession session) throws PasswordWrongException {
 
+       String password = admin.getPassword();
+       admin.setPassword(new MD5().getMD5ofStr(password));
         Admin a = adminService.selectAdminByCardNumber(admin.getCardNumber());
         if (a != null) {
             if (admin.getPassword().equals(a.getPassword())) {
 
                 // System.out.println("yes");
                 session.setAttribute("admin", a);
-                System.out.println(a.getName());
-                System.out.println(a.getCardNumber());
+               // System.out.println(a.getName());
+               // System.out.println(a.getCardNumber());
                 // model.addAttribute("admin",admin);
                 return "redirect:/select/list";
             } else {

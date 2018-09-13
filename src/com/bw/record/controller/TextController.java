@@ -38,7 +38,7 @@ public class TextController {
         text.setDate(new Date(System.currentTimeMillis()));
         textService.addTest(text);
         
-        return "ok";
+        return "redirect:/select/list";
     }
     
     //删除text

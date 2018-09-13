@@ -110,19 +110,19 @@
 							<div class="input-group input-group-lg">
 								<span class="input-group-addon" id="sizing-addon1">原密码</span> <input
 									type="password" class="form-control" placeholder="原密码"
-									aria-describedby="sizing-addon1" name="password">
+									aria-describedby="sizing-addon1" name="password"/>
 
 							</div>
 
 							<div class="input-group input-group-lg">
 								<span class="input-group-addon" id="sizing-addon1">新密码</span> <input
 									type="password" class="form-control" placeholder="新密码"
-									aria-describedby="sizing-addon1" name = "password" id = "password">
+									aria-describedby="sizing-addon1" name = "password" id = "password"/>
 							</div>
 							<div class="input-group input-group-lg">
 								<span class="input-group-addon" id="sizing-addon1">新密码</span>
 								 <input	type="password" class="form-control" placeholder="确认密码"
-									aria-describedby="sizing-addon1" name="newPassword" id="newPassword" onblur="check()">
+									aria-describedby="sizing-addon1" name="newPassword" id="newPassword" onblur="check()"/>
 							</div>
 							<div class="input-group input-group-lg">
 								<span class="input-group-addon" id="sizing-addon1">
